@@ -1,0 +1,18 @@
+ 
+.hero { 
+  padding: 175px 20px 250px;
+
+  &__heading {
+    font-size: 40px;
+    &--primary {
+      @extend .hero__heading;
+    }
+    &--secondary {
+      @extend .hero__heading;
+    }
+  }
+
+  .block-editor__container &__image {
+    height: 100%;
+  }
+}

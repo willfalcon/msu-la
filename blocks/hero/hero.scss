@@ -1,0 +1,50 @@
+@import '../block-import';
+
+
+.hero,
+.page-content .hero {
+ 
+  padding: calc(5rem + 125px) 2rem 25rem;
+  position: relative;
+
+  
+  &__image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    &::before {
+      content: '';
+      background-image: linear-gradient(15deg, rgba(35, 59, 32, 100) 0%,rgba(35, 59, 32, 100) 20%,rgba(35, 59, 32, 0) 80%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__heading {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    color: white;
+    line-height: 1.15;
+    font-size: 4rem;
+    &--primary {
+      @extend .hero__heading;
+    }
+    &--secondary {
+      @extend .hero__heading;
+      font-weight: $fw-bold;
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.page-content,
+.wp-block-group__inner-container {
+  .wp-block-columns {
+    margin-bottom: 0;
+  }
+  > * { 
+    @include content-width;
+    &.alignwide {
+      width: $wide-width;
+    }
+    &.alignfull {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      > .wp-block-column {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.wp-block-columns {
+  gap: 4rem;
+}
+
+body {
+  min-height: 100vh;
+  &.admin-bar {
+    min-height: calc(100vh - $admin-bar);
+    @include responsive {
+      min-height: calc(100vh - $admin-bar-desktop);
+    }
+  } 
+}

@@ -1,0 +1,10 @@
+.hero {
+  padding: 175px 20px 250px;
+}
+.hero__heading, .hero__heading--secondary, .hero__heading--primary {
+  font-size: 40px;
+}
+.block-editor__container .hero__image {
+  height: 100%;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlcm8tZWRpdG9yLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRTs7QUFFQTtFQUNFOztBQVNGO0VBQ0UiLCJmaWxlIjoiaGVyby1lZGl0b3IuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiIFxuLmhlcm8geyBcbiAgcGFkZGluZzogMTc1cHggMjBweCAyNTBweDtcblxuICAmX19oZWFkaW5nIHtcbiAgICBmb250LXNpemU6IDQwcHg7XG4gICAgJi0tcHJpbWFyeSB7XG4gICAgICBAZXh0ZW5kIC5oZXJvX19oZWFkaW5nO1xuICAgIH1cbiAgICAmLS1zZWNvbmRhcnkge1xuICAgICAgQGV4dGVuZCAuaGVyb19faGVhZGluZztcbiAgICB9XG4gIH1cblxuICAuYmxvY2stZWRpdG9yX19jb250YWluZXIgJl9faW1hZ2Uge1xuICAgIGhlaWdodDogMTAwJTtcbiAgfVxufSJdfQ== */

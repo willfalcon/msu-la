@@ -1,0 +1,27 @@
+{
+  "name": "cdhq/content-tabs",
+  "title": "Content Tabs",
+  "style": "content-tabs-style",
+  "editorStyle": "content-tabs-editor-style",
+  "script": "content-tabs-script",
+  "category": "msu-la",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "content-tabs.php"
+  },
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    }
+  },
+  "icon": "grid-view",
+  "textdomain": "msu-la",
+  "example": {}
+}

@@ -1,0 +1,9 @@
+.content-tab {
+  grid-row: 1/2;
+}
+
+.content-tab-content {
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRlbnQtdGFiLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUM7RUFDQzs7O0FBR0Q7RUFDQztFQUNBIiwiZmlsZSI6ImNvbnRlbnQtdGFiLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiAuY29udGVudC10YWIge1xuICBncmlkLXJvdzogMSAvIDI7XG4gfVxuXG4gLmNvbnRlbnQtdGFiLWNvbnRlbnQge1xuICBncmlkLXJvdzogMiAvIDM7XG4gIGdyaWQtY29sdW1uOiAxIC8gNDtcbiB9Il19 */

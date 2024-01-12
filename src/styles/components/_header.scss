@@ -1,0 +1,44 @@
+.header {
+  background: rgba(var(--rgb-dark), .47);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  .admin-bar & {
+    top: $admin-bar;
+    @include responsive {
+      top: $admin-bar-desktop;
+    }
+  }
+}
+
+.header-logo {
+  width: 560px;
+  display: block;
+  max-width: 100%;
+
+}
+
+.header-nav {
+  padding-right: 2rem;
+  &__menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .menu-item {
+    color: white;
+    background: var(--orange);
+    padding: 1rem;
+    border-radius: 10rem;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

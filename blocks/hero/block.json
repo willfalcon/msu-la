@@ -1,0 +1,26 @@
+{
+"name": "cdhq/hero",
+  "title": "Hero",
+  "style": "hero-style",
+  "editorStyle": "hero-editor-style",
+  "category": "msu-la",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "hero.php"
+  },
+  "supports": {
+    "align": true,
+    "anchor": true
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "icon": "grid-view",
+  "textdomain": "msu-la",
+  "example": {}
+}
