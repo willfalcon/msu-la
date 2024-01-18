@@ -122,7 +122,7 @@ function acf_load_color_field_choices( $field ) {
 }
 
 if (function_exists('have_rows')) {
-  add_filter('acf/load_field/name=palette_colors', 'acf_load_color_field_choices');
+  // add_filter('acf/load_field/name=palette_colors', 'acf_load_color_field_choices');
 }
   
 

@@ -15,8 +15,10 @@
 		foreach ($blocks as $block) {
 			$block_base = $base . $block;
 			$dist_base = get_template_directory_uri() . '/dist/' . $block . '/' . $block;
-			if (file_exists($block_base . '/block.json')) {
-				register_block_type($block_base);
+			if (file_exists($block_base . '/block.json') || str_starts_with($block, 'core-')) {
+				if (file_exists($block_base . '/block.json')) {
+					register_block_type($block_base);
+				}
 				if (file_exists($block_base . '/' . $block . '.scss')) {
 					wp_register_style($block . '-style', $is_dev ? $dist_base . '.css' : $dist_base . '.min.css', array(), $ver);
 				}
@@ -29,7 +31,6 @@
 				if (file_exists($block_base . '/' . $block . '-editor.js')) {
 					wp_register_script($block . '-editor-script', $is_dev ? $dist_base . '-editor.js' : $dist_base . '-editor.min.js', array(), $ver, true);
 				}
-				
 			}
 		}
 	}
@@ -106,3 +107,10 @@ if (function_exists('get_field')) {
 	}
 	add_action( 'after_setup_theme', 'cdhq_set_site_blocks_color_palette' );
 }
+
+
+register_block_style('core/columns', array(
+	'name' => 'homepage',
+	'label' => 'Homepage Form Columns',
+	'style_handle' => 'core-group-style',
+));

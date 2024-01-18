@@ -3,10 +3,15 @@
   if (array_key_exists('align', $block)) {
     $classes .= ' align' . $block['align'];
   }
+  if ($is_preview) {
+    $classes .= ' is-preview';
+  }
 
   $allowed_blocks = array(
     'cdhq/content-tab'
-  )
+  );
+
+
 ?>
 
 <div class="<?php echo $classes; ?>">

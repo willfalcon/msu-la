@@ -16,7 +16,7 @@ function watchTask(cb) {
   livereload.listen();
   watch(['src/styles/**/*.scss'], parallel(devThemeStyles));
   // watch(['blocks/**/*.scss'], devBlockStyles);
-  // watch(['src/scripts/**/*.js'], devMainScript);
+  watch(['src/scripts/**/*.js'], devMainScript);
   // watch(['blocks/**/*.js'], blockScripts);
   watch(['**/*.php'], refresh);
   cb();
