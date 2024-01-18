@@ -1,0 +1,29 @@
+{
+  "name": "cdhq/content-decoration",
+  "title": "Content Decoration",
+  "style": "content-decoration-style",
+  "editorStyle": "content-decoration-editor-style",
+  "category": "msu-la",
+  "apiVersion": 2,
+  "keywords": [],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "content-decoration.php"
+  },
+  "supports": {
+    "align": ["left", "right", "center"],
+    "anchor": true,
+    "dimensions": {
+      "minHeight": true
+    }
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "left"
+    }
+  },
+  "icon": "grid-view",
+  "textdomain": "msu-la",
+  "example": {}
+}

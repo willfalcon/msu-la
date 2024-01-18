@@ -1,0 +1,29 @@
+.footer {
+  background: var(--true-maroon);
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__social {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    li {
+      margin: 0;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.wp-block-columns.is-style-homepage .wp-block-column:last-child {
+  height: 125%;
+  position: relative;
+  top: -2em;
+  margin-bottom: -4em;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvcmUtZ3JvdXAuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFRTtFQUNFO0VBR0E7RUFDQTtFQUNBIiwiZmlsZSI6ImNvcmUtZ3JvdXAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndwLWJsb2NrLWNvbHVtbnMuaXMtc3R5bGUtaG9tZXBhZ2Uge1xuICAvLyBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIC53cC1ibG9jay1jb2x1bW46bGFzdC1jaGlsZCB7XG4gICAgaGVpZ2h0OiBjYWxjKDEwMCUgKyAyNSUpO1xuICAgIC8vIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNSUpO1xuICAgIC8vIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdG9wOiAtMmVtO1xuICAgIG1hcmdpbi1ib3R0b206IC00ZW07XG5cbiAgfVxufSJdfQ== */
