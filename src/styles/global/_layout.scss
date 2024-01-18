@@ -1,6 +1,7 @@
 .page-content,
-.wp-block-group__inner-container {
-  .wp-block-columns {
+.wp-block-group__inner-container,
+.wp-block-columns.alignfull > .wp-block-column {
+  .wp-block-columns { 
     margin-bottom: 0;
   }
   > * { 

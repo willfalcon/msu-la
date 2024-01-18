@@ -1,12 +1,16 @@
+@import '../block-import';
+
 .wp-block-columns.is-style-homepage {
   // position: relative;
   .wp-block-column:last-child {
-    height: calc(100% + 25%);
-    // transform: translateY(-5%);
-    // position: absolute;
-    position: relative;
-    top: -2em;
-    margin-bottom: -4em;
+    @include responsive {
+      height: calc(100% + 25%);
+      // transform: translateY(-5%);
+      // position: absolute;
+      position: relative;
+      top: -2em;
+      margin-bottom: -4em;
 
+    }
   }
 }

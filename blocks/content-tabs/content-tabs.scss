@@ -2,9 +2,11 @@
 
 .content-tabs > .acf-innerblocks-container {
   max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  column-gap: 2rem;
-  transform: translateY(-150px);
+  @include responsive {
+    transform: translateY(-150px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 2rem; 
+  }
 }

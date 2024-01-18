@@ -1,13 +1,17 @@
 .header {
   background: rgba(var(--rgb-dark), .47);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem;
-  position: fixed;
   width: 100%;
   z-index: 2;
+  position: absolute;
   top: 0;
+  @include responsive {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+
+  }
   .admin-bar & {
     top: $admin-bar;
     @include responsive {
@@ -17,10 +21,12 @@
 }
 
 .header-logo {
-  width: 560px;
   display: block;
   max-width: 100%;
-
+  width: 100%;
+  @include responsive {
+    width: 560px;
+  }
 }
 
 .header-nav {

@@ -21,6 +21,7 @@
 
 <div class="content-tab__text-wrapper">
   <span class="content-tab__text"><?php the_field('text'); ?></span>
+  <span class="content-tab__icon-wrapper"><i class="fa-solid fa-chevron-down"></i></span>
 </div> 
 
 </button>
