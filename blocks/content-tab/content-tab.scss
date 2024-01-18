@@ -105,6 +105,9 @@
   @include responsive {
     display: none;
     padding-top: 4rem;
+    &.init {
+      height: auto;
+    }
     &.show {
       display: block;
     }
