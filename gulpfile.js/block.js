@@ -64,10 +64,59 @@ exports.developBlock = function developBlock() {
 };
 
 // const buildBlock = series(buildBlockScript, buildBlockStyles);
-const buildBlock = series(buildBlockStyles);
 
 exports.buildBlockStyles = buildBlockStyles;
-exports.buildBlock = buildBlockStyles;
+
+exports.buildBlock = async function buildBlock() {
+  if (!argv.block) {
+    console.log('Must set option --block');
+    return src('index.php');
+  }
+
+  const dev = argv.D;
+
+  const block = argv.block;
+  console.log(block);
+
+  const styleSource = `blocks/${block}/${block}.scss`;
+  const editorStyleSource = `blocks/${block}/${block}-editor.scss`;
+  const styleDest = `./dist/${block}`;
+  const scriptSource = block ? `blocks/${block}/${block}.js` : 'blocks/**/*.js';
+  const editorScriptSource = block ? `blocks/${block}/${block}-editor.js` : 'blocks/**/*.js';
+
+  await fs.access(styleSource, err => {
+    if (err) {
+      console.log('no default styles');
+      return;
+    } else {
+      styleScript(styleSource, styleDest, dev);
+    }
+  });
+  await fs.access(editorStyleSource, err => {
+    if (err) {
+      console.log('no editor styles');
+      return;
+    } else {
+      styleScript(editorStyleSource, styleDest, dev);
+    }
+  });
+  await fs.access(scriptSource, err => {
+    if (err) {
+      console.log('no default script');
+      return;
+    } else {
+      jsScript(scriptSource, dev);
+    }
+  });
+  await fs.access(editorScriptSource, err => {
+    if (err) {
+      console.log('no editor script');
+      return;
+    } else {
+      jsScript(editorScriptSource, dev);
+    }
+  });
+};
 
 async function buildBlocks() {
   const blocks = await readdir('blocks/');
@@ -87,6 +136,7 @@ async function buildBlocks() {
           console.log('no default styles');
           return;
         } else {
+          console.log(`building ${block} styles`);
           return styleScript(styleSource, styleDest);
         }
       });
@@ -95,6 +145,7 @@ async function buildBlocks() {
           console.log('no editor styles');
           return;
         } else {
+          console.log(`building ${block} editor styles`);
           return styleScript(editorStyleSource, styleDest);
         }
       });
@@ -103,6 +154,7 @@ async function buildBlocks() {
           console.log('no default script');
           return;
         } else {
+          console.log(`building ${block} script`);
           return jsScript(scriptSource);
         }
       });
@@ -111,6 +163,7 @@ async function buildBlocks() {
           console.log('no editor script');
           return;
         } else {
+          console.log(`building ${block} editor script`);
           return jsScript(editorScriptSource);
         }
       });

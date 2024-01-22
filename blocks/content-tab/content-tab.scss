@@ -80,8 +80,16 @@
     display: block;
     border: 2px solid white;
     border-radius: 50%;
-    padding: .4rem;
-
+    // padding: .4rem;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
  }
 
@@ -90,22 +98,26 @@
   grid-column: 1 / 4;
   // margin-bottom: 2rem;
   overflow: hidden;
-  transition: .25s;
+  
   > * {
     margin-top: 0;;
   }
+  opacity: 0;
   &.init {
     height: 0px;
     // overflow: hidden;
+    opacity: 1;
+    transition: .25s;
   }
 
   &.show {
     height: var(--height);
   }
   @include responsive {
-    display: none;
     padding-top: 4rem;
     &.init {
+      transition: none;
+      display: none;
       height: auto;
     }
     &.show {

@@ -3,7 +3,7 @@
   "title": "Content Tabs",
   "style": "content-tabs-style",
   "editorStyle": "content-tabs-editor-style",
-  "script": "content-tabs-script",
+  "script": ["wp-domready", "content-tabs-script"],
   "category": "msu-la",
   "apiVersion": 2,
   "keywords": [],
