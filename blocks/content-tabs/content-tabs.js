@@ -14,10 +14,10 @@ wp.domReady(() => {
       panel.classList.add('init');
     });
 
-    if (!mobile) {
-      panels[0].classList.add('show');
-      openPanel(panels[0]);
-    }
+    // if (!mobile) {
+    panels[0].classList.add('show');
+    openPanel(panels[0]);
+    // }
     tabs.forEach(tab => {
       tab.addEventListener('click', e => {
         if (disabled) {
@@ -25,30 +25,30 @@ wp.domReady(() => {
         }
         const panelId = tab.getAttribute('aria-controls');
         const panel = document.querySelector(`#${panelId}`);
-        if (mobile) {
-          if (panel.classList.contains('show')) {
-            panel.classList.remove('show');
-          } else {
-            panel.classList.add('show');
-          }
-        } else {
-          if (!panel.classList.contains('open')) {
-            disabled = true;
-            const prevOpenPanel = Array.from(panels).filter(panel => panel.classList.contains('open'));
-            console.dir(tab);
-            if (prevOpenPanel[0]) {
-              closePanel(prevOpenPanel[0]);
-              setTimeout(() => {
-                openPanel(panel);
-              }, delay);
-            } else {
-              openPanel(panel);
-            }
+        // if (mobile) {
+        //   if (panel.classList.contains('show')) {
+        //     panel.classList.remove('show');
+        //   } else {
+        //     panel.classList.add('show');
+        //   }
+        // } else {
+        if (!panel.classList.contains('open')) {
+          disabled = true;
+          const prevOpenPanel = Array.from(panels).filter(panel => panel.classList.contains('open'));
+          console.dir(tab);
+          if (prevOpenPanel[0]) {
+            closePanel(prevOpenPanel[0]);
             setTimeout(() => {
-              disabled = false;
-            }, delay * 2 + transition);
+              openPanel(panel);
+            }, delay);
+          } else {
+            openPanel(panel);
           }
+          setTimeout(() => {
+            disabled = false;
+          }, delay * 2 + transition);
         }
+        // }
       });
     });
   });

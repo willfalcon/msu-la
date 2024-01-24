@@ -1,12 +1,51 @@
 @import '../block-import'; 
 
-.content-tabs > .acf-innerblocks-container {
-  max-width: 100%;
-  @include responsive {
-    transform: translateY(-150px);
+.content-tabs {
+  padding: 0;
+  position: relative;
+  &__mobile-text {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
+    justify-items: center;
+    background: rgba(var(--rgb-dark), .47);
+    color: white;
+    $size: 115px;
+    height: $size;
+    margin-top: -$size;  
+    p {
+      grid-column: span 3;
+      text-align: center;
+    }
+    @include responsive {
+      display: none;
+    }
+  }
+  &__icon {
+      display: block;
+      border: 2px solid white;
+      border-radius: 50%;
+      // padding: .4rem;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      margin: 0 0 1.5rem;
+      svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+}
+.content-tabs > .acf-innerblocks-container {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  
+  @include responsive {
+    transform: translateY(-150px);
     column-gap: 2rem; 
   }
 }

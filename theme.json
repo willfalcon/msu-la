@@ -40,6 +40,11 @@
           "color": "#e3fbd0"
         },
         {
+          "name": "Maroon",
+          "slug": "maroon",
+          "color": "#5d1725"
+        },
+        {
           "name": "Dark",
           "slug": "dark",
           "color": "#00251c"

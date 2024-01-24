@@ -178,6 +178,12 @@ async function developBlocks() {
 
   livereload.listen();
 
+  const assetPHPWatcher = watch(['blocks/**/*.asset.php']);
+  assetPHPWatcher.on('change', path => {
+    const block = blockNames.filter(name => path.includes(name))[0];
+
+    copyAssetPHP(block);
+  });
   const styleWatcher = watch(['blocks/**/*.scss']);
   function runStyleScript(path) {
     const block = blockNames.filter(name => path.includes(name))[0];
@@ -190,12 +196,12 @@ async function developBlocks() {
   function runJsScript(path) {
     const block = blockNames.filter(name => path.includes(name))[0];
     console.log(`building ${block} script`);
-    jsScript(path, true);
+    blockJsScript(path, block, false);
   }
   jsWatcher.on('change', runJsScript);
 
   watch(['blocks/**/*.json|php'], refresh);
 }
+exports.developBlocks = developBlocks;
 
 exports.buildBlocks = buildBlocks;
-exports.developBlocks = developBlocks;

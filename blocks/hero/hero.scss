@@ -3,7 +3,7 @@
 
 .hero,
 .page-content .hero {
-  padding: calc(5rem + 125px) 2rem 5rem;
+  padding: calc(5rem + 125px) 2rem 15rem;
   @include responsive {
     padding: calc(5rem + 125px) 2rem 25rem;
   }
