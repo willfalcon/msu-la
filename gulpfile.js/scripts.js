@@ -3,6 +3,7 @@ const named = require('vinyl-named');
 const compiler = require('webpack');
 const webpack = require('webpack-stream');
 const livereload = require('gulp-livereload');
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 
 const scriptSrces = [
   'src/scripts/index.js',
@@ -36,6 +37,7 @@ exports.devMainScript = function devMainScript() {
               },
             ],
           },
+          plugins: [new DependencyExtractionWebpackPlugin()],
         },
         compiler
       )
@@ -64,6 +66,7 @@ exports.prodMainScript = function prodMainScript() {
               },
             ],
           },
+          plugins: [new DependencyExtractionWebpackPlugin()],
         },
         compiler
       )

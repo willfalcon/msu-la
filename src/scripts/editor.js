@@ -1,16 +1,6 @@
-// wp.domReady(() => {
-//   wp.blocks.registerBlockStyle('core/columns', [
-//     {
-//       name: 'default',
-//       label: 'Default',
-//       isDefault: true,
-//     },
-//     {
-//       name: 'homepage',
-//       label: 'Homepage Form Columns',
-//     },
-//   ]);
-// });
+import { registerBlockExtension } from '@10up/block-components';
+
+//** Text Wrap Option */
 
 // Blocks to add the text-wrap option to
 const enableTextWrapButtonOnBlocks = [
@@ -114,3 +104,49 @@ const saveTextWrapAttribute = (extraProps, blockType, attributes) => {
 };
 
 wp.hooks.addFilter('blocks.getSaveContent.extraProps', 'custom-attributes/save-text-wrap-attribute', saveTextWrapAttribute);
+
+/** Column Mobile Order Options */
+
+const mobileOrderAttributes = {
+  mobileOrder: {
+    type: 'number',
+  },
+};
+
+function generateMobileOrderClassName(attributes) {
+  const { mobileOrder } = attributes;
+  if (mobileOrder) {
+    return `mobile-order-${mobileOrder}`;
+  }
+  return '';
+}
+
+const { InspectorControls } = wp.blockEditor;
+const { PanelBody, ToggleControl, TextControl } = wp.components;
+
+function MobileOrderEdit(props) {
+  const { attributes, setAttributes } = props;
+  const { mobileOrder } = attributes;
+  return el(
+    InspectorControls,
+    {},
+    el(
+      PanelBody,
+      { title: 'Mobile Order' },
+      el(TextControl, {
+        label: 'Mobile Order',
+        type: 'number',
+        value: mobileOrder,
+        onChange: mobileOrder => setAttributes({ mobileOrder }),
+      })
+    )
+  );
+}
+
+registerBlockExtension('core/column', {
+  extensionName: 'mobileOrder',
+  attributes: mobileOrderAttributes,
+  classNameGenerator: generateMobileOrderClassName,
+  inlineStyleGenerator: () => null,
+  Edit: MobileOrderEdit,
+});

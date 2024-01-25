@@ -12,3 +12,19 @@
 body {
   @include custom-variables();
 }
+
+.mobile-order-1 {
+  @include mobile-only {
+    order: 1;
+  }
+}
+.mobile-order-2 {
+  @include mobile-only {
+    order: 2;
+  }
+}
+.mobile-order-3 {
+  @include mobile-only {
+    order: 3;
+  }
+}

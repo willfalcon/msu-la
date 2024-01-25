@@ -4,6 +4,12 @@
   }
 }
 
+@mixin mobile-only($breakpoint: $break) {
+	@media (max-width: #{$break - 1px}) {
+		@content;
+	}
+}
+
 @mixin responsive-ipad($small: $ipad, $large: $large-break) {
 	@media (min-width: $small) and (max-width: $large) {
 		@content;

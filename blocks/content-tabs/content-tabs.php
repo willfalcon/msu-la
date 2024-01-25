@@ -18,9 +18,6 @@
   <?php if (get_field('mobile_text')) : ?>
     <div class="content-tabs__mobile-text">
       <p><?php the_field('mobile_text'); ?></p>
-      <div class="content-tabs__icon"><i class="fa-solid fa-chevron-down"></i></div>
-      <div class="content-tabs__icon"><i class="fa-solid fa-chevron-down"></i></div>
-      <div class="content-tabs__icon"><i class="fa-solid fa-chevron-down"></i></div>
     </div>
   <?php endif; ?>
   <InnerBlocks allowedBlocks="<?php echo esc_attr( wp_json_encode( $allowed_blocks ) ); ?>" />
